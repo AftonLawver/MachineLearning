@@ -1,12 +1,14 @@
-# import pandas as pd
-#
-# url = "datasets/automobiles.data"
-# df = pd.read_csv(url)
-# print(df.head())
+import pandas as pd
 
-my_list1 = ['afton', 'alliyah']
 
-my_list2 = [2, 1]
+url = "datasets/adult.data"
+columns = ['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital-status',
+           'occupation', 'relationship', 'race', 'sex', 'capital-gain', 'capital-loss',
+           'hours-per-week', 'native-country', 'salary']
+df = pd.read_csv(url, names=columns, index_col=0)
 
-new_list = list(zip(my_list2, my_list1))
-print(new_list)
+
+# df = df[['age', 'workclass', 'education', 'marital-status', 'occupation', 'relationship',
+#         'race', 'sex', 'native-country']]
+
+print(df.head(10))
